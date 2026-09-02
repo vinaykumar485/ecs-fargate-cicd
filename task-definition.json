@@ -1,0 +1,21 @@
+{
+  "family": "ecs-fargate-cicd",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::273263084701:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "ecs-fargate-cicd",
+      "image": "273263084701.dkr.ecr.us-east-1.amazonaws.com/ecs-fargate-cicd:2d86e97",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ]
+}
